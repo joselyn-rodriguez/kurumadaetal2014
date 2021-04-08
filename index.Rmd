@@ -14,6 +14,17 @@ output:
     css: [default, metropolis, metropolis-fonts]
 ---
 
+```{r, load_refs, include=FALSE, cache=FALSE}
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+citations <- ReadBib("./citations.bib", check = FALSE)
+```
+
 
 # Introduction and background
 
@@ -159,17 +170,17 @@ image5 <- knitr::include_graphics("images/meanfixprop.png")
 - why this analysis?
     - to see if the contrastive accent on the verb triggered more fixations to contrast-set members (e.g., zebra vs. okapi) in 1-contrast trials which would indicate that prosodic contours are interpreted with respect to visually-represented contrasts
     - they used a Multi-level generalized linear regression because...
-      - multi-level: they wanted to account for grouping factors through the use of random slopes and intercepts
-      - generalized: the DV was categorical - fixations to target contrast set vs. all pictures
+      - "multi-level": they wanted to account for grouping factors through the use of random slopes and intercepts
+      - "generalized": the DV was the *proportion* of fixations to target contrast set vs. all pictures
             - this was transformed using the logit function
-        
+
 ---
 # Results 
 ## Eye-movements
 ### Model(s) 2 
 
 .pull-left[
-- DV: logit-transformed log-odds ratios of fixations to either *non-prototypical targets vs. fixations to both target pictures*
+- DV: logit-transformed log-odds ratios of proportion fixations to either *non-prototypical targets vs. fixations to both target pictures*
       - prosody condition (Noun-focus vs. Verb focus)
       - display type (1- vs. 2-contrast)
 ]
@@ -198,28 +209,104 @@ image5 <- knitr::include_graphics("images/meanfixprop.png")
 # Results
 ## Eye-movements
 
+.pull-left[
 - so are people just using a hueristic or not?
 - given that in  1-contrast trials, participants fixated the target contrast set  more than the less-nameable (still odd), it suggests that the interpertation was derived wrt contrast-set membership instead of just visual typicality. 
+- you can't really draw any conclusions from the 2-contrast display other than the non-target prototypical having the highest proportion of looks (which is unexpected)
+]
 
 .pull-right[`r image5`]
 
+---
+# Results
+## Mouse-click RT
+
+- RTs were calculated by: time of picture selection - time utterance ended
+- RTs were log-transformed
+    - this is fairly standard from what I can tell in the literature
+---
+# Results
+## Mouse-click RT
+
+- analyzed using another linear model although the details here are left out. 
+-  generally, effect of prosody on RT was dependent on whether the selected picture was prototypical or non-prototypical
+    - $\beta$ = .509, t = 2.94, p < .005
+--
+- trials w/Noun-focus prosody
+    - RTs were faster when the prototypical was selected vs. non-prototypical
+        -  $\beta$ = .272, t = 3.20, p < .005
+--
+- trials w/Verb-focus prosody
+    - RTs were slower for prototypical vs. non-prototypical targets
+    - this is just a trend though and it didn't reach significance
+        - $\beta$ = .201, t = 1.10, p > .10
+    - RTs were slower overall for Verb-focus prosody
+        - $\beta$ = .242, t = 2.09, p < .05
+--
+- overall, these data would have been consistent with delayed pragmatic inference unlike the eye-tracking data
+    - hence, the "for the most part"
+
+---
+# Conclusions
+
+- Overall, this study showed...
+
+1. that listeners can construct a contrast pair based on prosodic information? 
+2. prosodic information is integrated incrementally, but that there is an inconsitency between the eye-tracking data and the mouse-clicks. 
+      - given the fact that this is an asymmetry that is seen in other parts of the literature, perhaps it's not entirely surprising. It could be prosodic information is processed in parallel to other segmental information, but that integration itself may be taking longer. 
+      - e.g., discussion in Reinisch and Sjerps (2013), Cho et al (2007), Brown et al (2011)
+3. it does look like the interpretation of LOOKS <sub>L+H*</sub> involves a contextually-supported inference since we didn't see the generalization of looks towards atypical images as predicted by the heuristic
 
 ---
 
 # Appropriateness of Analysis
+## GLMMs
 - Using a GLMM is generally what is done in the field as far as I can tell, so this wasn't unusual in terms of choice of analysis
 - However, it is the case that many of the analyses using a linear regression are moving towards Bayesian methods, but this paper was published in 2014 so it's not surprising that they use a frequentist model.
-
+- using a logit-transformation for porportion of fixation is also not unusual
+- altogether, I think that their analysis was both appropriate and not unusual
+- the next slide, however, will discuss more general comments regarding their analysis 
 
 ---
 
-
 # Presentation of Results
 ## General comments
-
+- They did a good job of displaying their results for the first two models for the  most part
+    - although I would have liked to have actually seen more information about their random effects structure
+    - I also noticed that in their second model the graph didn't actually display the trial number even though they reference it
+        - I'm not sure if this is a mistake on their part or if I am interpreting it incorrectly
 - They use a random effects structure but only briefly mention this in the description above the table for their first model.
-  - They also only describe how they determined what random effects they used in a footnote that would be easily missed. 
-  
-- no mention of how the variables were coded at all and no access to data/analyses to check
+    - They also only describe how they determined what random effects they used in a footnote that would be easily missed. 
+-  Finally, there is also no mention of how the variables were coded at all and no access to data/analyses to check
+    - although this (sadly) usually the case
+    
 
-- 
+---
+# What I liked/disliked
+
+- I liked that the analyses were fairly straight to the point, but at the same time I didn't like that a lot of information was glossed over because of this. 
+- I also would have liked a possible interpretation for the null finding for the 2-contrast trials
+    - but since this is a brief article, it's not surprising that it is not discussed here
+    
+---
+# Citations
+
+```{r refs, echo=FALSE, results="asis"}
+
+print(citations[key = "brown_expectations_2011"], 
+  .opts = list(check.entries = FALSE, 
+               style = "html", 
+               bib.style = "authoryear"))
+print(citations[key = "cho_prosodically_2007"], 
+  .opts = list(check.entries = FALSE, 
+               style = "html", 
+               bib.style = "authoryear"))
+print(citations[key = "kurumada_is_2014"], 
+  .opts = list(check.entries = FALSE, 
+               style = "html", 
+               bib.style = "authoryear"))
+print(citations[key = "reinisch_uptake_2013"], 
+  .opts = list(check.entries = FALSE, 
+               style = "html", 
+               bib.style = "authoryear"))
+```
