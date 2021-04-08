@@ -25,6 +25,8 @@ class: center, middle, inverse, title-slide
 
 
 
+
+
 # Introduction and background
 
 - It's often assumed in psycholinguistics that pragmatic inference is slower and more resource intensive than other aspects of sentence processing. 
@@ -41,13 +43,18 @@ class: center, middle, inverse, title-slide
 
 ## issues with these studies?
 
-- relevant contrast was _explicitly_ mentioned prior in the discourse. 
+.pull-left[- relevant contrast was _explicitly_ mentioned prior in the discourse. 
    - difficult to generalize findings to cases hwere context contrast set is determined online (not based on previous explicit mention)
 - solution?
   - visual word experiment using _it looks like an X_ construction
     - one using declarative prosodic contour (noun-focus)
     - one using contrastive L + H* on verb with rising L-H% boundary tone (Verb-focus prosody)
+]
 
+.pull-right[
+&lt;img src="images/prosody.png" width="1181" /&gt;
+]
+    
 
 ---
 # Introduction and background 
@@ -72,21 +79,19 @@ class: center, middle, inverse, title-slide
   
 ## Stimuli
 
+.pull-left[
 - 16 imageable hi-frequency bi-syllabic nouns with initial frame
 - native speaker recorded two tokens of each tiem with Noun-focus and Verb-focus prosody
 - 44 filler items
   - the filler items (other than the "it looks like..") were unambiguous in order to show that the speaker is generally cooperative
-  
-.pull-left[
 - there were 60 4-pic displays w/16 critical and 44 filler
   - half the critical trials were 1-contrast 
   - half were 2-contrast
 ]
-  
-
 
 .pull-right[
 &lt;img src="images/stim.png" width="1424" /&gt;
+&lt;img src="images/morestims.png" width="1005" /&gt;
 ]
 
 
@@ -131,9 +136,8 @@ class: center, middle, inverse, title-slide
   - verb-focus prosody elicited more fixations to the non-prototypical target prior to the onset of the last noun
 - 2 contrast displays
   - fixations in non-prototypical targets in response to verb-focus prosody and prototypical targets in response to noun-focus prosody began to increase 200ms after noun-onset 
-
-
-.pull-center[&lt;img src="images/eyemovres.png" width="2352" /&gt;]
+  
+.pull-justify[&lt;img src="images/eyemovres.png" width="2352" /&gt;]
 
 ---
 # Results
@@ -172,8 +176,12 @@ class: center, middle, inverse, title-slide
 
 .pull-left[
 - DV: logit-transformed log-odds ratios of proportion fixations to either *non-prototypical targets vs. fixations to both target pictures*
-      - prosody condition (Noun-focus vs. Verb focus)
-      - display type (1- vs. 2-contrast)
+    - predictors:
+        - prosody condition (Noun-focus vs. Verb focus)
+        - display type (1- vs. 2-contrast)
+    - random effects structure:
+          - random intercepts and slopes for prosody and display type by participants
+and prosody, display type, and trial number by items
 ]
 
 .pull-right[
@@ -245,7 +253,7 @@ class: center, middle, inverse, title-slide
 1. that listeners can construct a contrast pair based on prosodic information? 
 2. prosodic information is integrated incrementally, but that there is an inconsitency between the eye-tracking data and the mouse-clicks. 
       - given the fact that this is an asymmetry that is seen in other parts of the literature, perhaps it's not entirely surprising. It could be prosodic information is processed in parallel to other segmental information, but that integration itself may be taking longer. 
-      - e.g., discussion in Reinisch and Sjerps (2013), Cho et al (2007), Brown et al (2011)
+          - e.g., discussion in Reinisch and Sjerps (2013), Cho et al (2007), Brown et al (2011)
 3. it does look like the interpretation of LOOKS &lt;sub&gt;L+H*&lt;/sub&gt; involves a contextually-supported inference since we didn't see the generalization of looks towards atypical images as predicted by the heuristic
 
 ---
@@ -255,7 +263,7 @@ class: center, middle, inverse, title-slide
 - Using a GLMM is generally what is done in the field as far as I can tell, so this wasn't unusual in terms of choice of analysis
 - However, it is the case that many of the analyses using a linear regression are moving towards Bayesian methods, but this paper was published in 2014 so it's not surprising that they use a frequentist model.
 - using a logit-transformation for porportion of fixation is also not unusual
-- altogether, I think that their analysis was both appropriate and not unusual
+- altogether, I think that their analysis was both appropriate and their explanations and interpretations were accurate
 - the next slide, however, will discuss more general comments regarding their analysis 
 
 ---
@@ -298,12 +306,14 @@ In: &lt;em&gt;Journal of Phonetics&lt;/em&gt; 35.2, pp. 210&amp;ndash;243.
 ISSN: 0095-4470.
 DOI: &lt;a href="https://doi.org/10.1016/j.wocn.2006.03.003"&gt;10.1016/j.wocn.2006.03.003&lt;/a&gt;.
 URL: &lt;a href="https://www.sciencedirect.com/science/article/pii/S0095447006000167"&gt;https://www.sciencedirect.com/science/article/pii/S0095447006000167&lt;/a&gt; (visited on Apr. 08, 2021).&lt;/cite&gt;&lt;/p&gt;
-
-```
-## No results.
-```
-
-list()
+&lt;p&gt;&lt;cite&gt;Kurumada, C., M. Brown, S. Bibyk, et al.
+(2014).
+&amp;ldquo;Is it or isn’t it: Listeners make rapid use of prosody to infer speaker meanings&amp;rdquo;.
+En.
+In: &lt;em&gt;Cognition&lt;/em&gt; 133.2, pp. 335&amp;ndash;342.
+ISSN: 00100277.
+DOI: &lt;a href="https://doi.org/10.1016/j.cognition.2014.05.017"&gt;10.1016/j.cognition.2014.05.017&lt;/a&gt;.
+URL: &lt;a href="https://linkinghub.elsevier.com/retrieve/pii/S0010027714001061"&gt;https://linkinghub.elsevier.com/retrieve/pii/S0010027714001061&lt;/a&gt; (visited on Mar. 01, 2021).&lt;/cite&gt;&lt;/p&gt;
 &lt;p&gt;&lt;cite&gt;Reinisch, E. and M. J. Sjerps
 (2013).
 &amp;ldquo;The uptake of spectral and temporal cues in vowel perception is rapidly influenced by context&amp;rdquo;.

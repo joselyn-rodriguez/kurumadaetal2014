@@ -25,6 +25,18 @@ BibOptions(check.entries = FALSE,
 citations <- ReadBib("./citations.bib", check = FALSE)
 ```
 
+```{r echo=FALSE, out.width="50%"}
+# this really isn't a necessary way of doing this but i committed
+image1 <- knitr::include_graphics("images/stim.png")
+image2 <- knitr::include_graphics("images/eyemovres.png")
+image3 <- knitr::include_graphics("images/model1.png")
+image4 <- knitr::include_graphics("images/model2.png")
+image5 <- knitr::include_graphics("images/meanfixprop.png")
+image6 <- knitr::include_graphics("images/prosody.png")
+image7 <- knitr::include_graphics("images/morestims.png")
+
+```
+
 
 # Introduction and background
 
@@ -42,13 +54,18 @@ citations <- ReadBib("./citations.bib", check = FALSE)
 
 ## issues with these studies?
 
-- relevant contrast was _explicitly_ mentioned prior in the discourse. 
+.pull-left[- relevant contrast was _explicitly_ mentioned prior in the discourse. 
    - difficult to generalize findings to cases hwere context contrast set is determined online (not based on previous explicit mention)
 - solution?
   - visual word experiment using _it looks like an X_ construction
     - one using declarative prosodic contour (noun-focus)
     - one using contrastive L + H* on verb with rising L-H% boundary tone (Verb-focus prosody)
+]
 
+.pull-right[
+`r image6`
+]
+    
 
 ---
 # Introduction and background 
@@ -73,23 +90,19 @@ citations <- ReadBib("./citations.bib", check = FALSE)
   
 ## Stimuli
 
+.pull-left[
 - 16 imageable hi-frequency bi-syllabic nouns with initial frame
 - native speaker recorded two tokens of each tiem with Noun-focus and Verb-focus prosody
 - 44 filler items
   - the filler items (other than the "it looks like..") were unambiguous in order to show that the speaker is generally cooperative
-  
-.pull-left[
 - there were 60 4-pic displays w/16 critical and 44 filler
   - half the critical trials were 1-contrast 
   - half were 2-contrast
 ]
-  
-```{r echo=FALSE, out.width="50%"}
-image1 <- knitr::include_graphics("images/stim.png")
-```
 
 .pull-right[
 `r image1`
+`r image7`
 ]
 
 
@@ -134,21 +147,14 @@ image1 <- knitr::include_graphics("images/stim.png")
   - verb-focus prosody elicited more fixations to the non-prototypical target prior to the onset of the last noun
 - 2 contrast displays
   - fixations in non-prototypical targets in response to verb-focus prosody and prototypical targets in response to noun-focus prosody began to increase 200ms after noun-onset 
-
-```{r echo=FALSE, out.width="40%"}
-image2 <- knitr::include_graphics("images/eyemovres.png")
-```
-.pull-center[`r image2`]
+  
+.pull-justify[`r image2`]
 
 ---
 # Results
 ## Eye-movements
 ### Model 1
-```{r echo=FALSE, out.width="40%"}
-image3 <- knitr::include_graphics("images/model1.png")
-image4 <- knitr::include_graphics("images/model2.png")
-image5 <- knitr::include_graphics("images/meanfixprop.png")
-```
+
 .pull-left[
   - DV: logit-transformed log-odds ratios of fixations to either *members of the target contrast (e.g., zebra & okapi) set vs. all pictures*
   - predictors: 
@@ -181,8 +187,11 @@ image5 <- knitr::include_graphics("images/meanfixprop.png")
 
 .pull-left[
 - DV: logit-transformed log-odds ratios of proportion fixations to either *non-prototypical targets vs. fixations to both target pictures*
-      - prosody condition (Noun-focus vs. Verb focus)
-      - display type (1- vs. 2-contrast)
+    - predictors:
+        - prosody condition (Noun-focus vs. Verb focus)
+        - display type (1- vs. 2-contrast)
+    - random effects structure:
+          - random intercepts and slopes for prosody and display type by participants and prosody, display type, and trial number by items (same)
 ]
 
 .pull-right[
@@ -254,7 +263,7 @@ image5 <- knitr::include_graphics("images/meanfixprop.png")
 1. that listeners can construct a contrast pair based on prosodic information? 
 2. prosodic information is integrated incrementally, but that there is an inconsitency between the eye-tracking data and the mouse-clicks. 
       - given the fact that this is an asymmetry that is seen in other parts of the literature, perhaps it's not entirely surprising. It could be prosodic information is processed in parallel to other segmental information, but that integration itself may be taking longer. 
-      - e.g., discussion in Reinisch and Sjerps (2013), Cho et al (2007), Brown et al (2011)
+          - e.g., discussion in Reinisch and Sjerps (2013), Cho et al (2007), Brown et al (2011)
 3. it does look like the interpretation of LOOKS <sub>L+H*</sub> involves a contextually-supported inference since we didn't see the generalization of looks towards atypical images as predicted by the heuristic
 
 ---
@@ -264,7 +273,7 @@ image5 <- knitr::include_graphics("images/meanfixprop.png")
 - Using a GLMM is generally what is done in the field as far as I can tell, so this wasn't unusual in terms of choice of analysis
 - However, it is the case that many of the analyses using a linear regression are moving towards Bayesian methods, but this paper was published in 2014 so it's not surprising that they use a frequentist model.
 - using a logit-transformation for porportion of fixation is also not unusual
-- altogether, I think that their analysis was both appropriate and not unusual
+- altogether, I think that their analysis was both appropriate and their explanations and interpretations were accurate
 - the next slide, however, will discuss more general comments regarding their analysis 
 
 ---
@@ -272,13 +281,14 @@ image5 <- knitr::include_graphics("images/meanfixprop.png")
 # Presentation of Results
 ## General comments
 - They did a good job of displaying their results for the first two models for the  most part
-    - although I would have liked to have actually seen more information about their random effects structure
+    - although I would have liked to have actually seen more information about their random effects
     - I also noticed that in their second model the graph didn't actually display the trial number even though they reference it
         - I'm not sure if this is a mistake on their part or if I am interpreting it incorrectly
-- They use a random effects structure but only briefly mention this in the description above the table for their first model.
+- Once again, they use a random effects structure but only briefly mention this in the description above the tables for their model.
     - They also only describe how they determined what random effects they used in a footnote that would be easily missed. 
+    - additionally, there is no information at all about any other random effects (if any) that are used in the other models that aren't summarized in one of the two tables
 -  Finally, there is also no mention of how the variables were coded at all and no access to data/analyses to check
-    - although this (sadly) usually the case
+    - although this usually the case
     
 
 ---
